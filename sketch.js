@@ -70,10 +70,10 @@ function setup(){
     block25 = new Block(960, 192,30,40);
 
     // creating polygon
-    polygon = Bodies.circle(70,480,25);
+    polygon = Bodies.circle(140,480,25);
     World.add(world,polygon);
 
-    slingshot = new Slingshot(this.polygon,{x:70, y:480});
+    slingshot = new Slingshot(this.polygon,{x:140, y:480});
 }
 
 function draw(){
@@ -149,6 +149,8 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode === 32){
+        Matter.Body.setPosition(this.polygon, {x: 140 , y: 480});
+ 
        slingshot.attach(this.polygon);
     }
 }
